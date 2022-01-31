@@ -44,4 +44,16 @@ public class UserRegistrationTest {
 		Assert.assertEquals(false, result);
 	}
 
+	@Test
+	public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
+		boolean result = userRegistration.phoneNumber("91 9900873323");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPhoneNumber_WhenNotProper_ShouldReturnFlase() {
+		boolean result = userRegistration.phoneNumber("+91 9900873323");
+		Assert.assertEquals(false, result);
+	}
+
 }
