@@ -104,4 +104,16 @@ public class UserRegistrationTest {
 		Assert.assertEquals(false, result);
 	}
 
+	@Test
+	public void givenEmail2_WhenProper_ShouldReturnTrue() {
+		boolean result = userRegistration.emailIdValidator("abc.100@abc.com.au");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenEmail2_WhenNotProper_ShouldReturnFalse() {
+		boolean result = userRegistration.emailIdValidator("abc()*@gmail.com");
+		Assert.assertEquals(false, result);
+	}
+
 }
